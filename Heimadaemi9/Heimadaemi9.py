@@ -6,6 +6,8 @@ Möguleg lausn á Bankareikningsverkefninu
 @author: helgi
 """
 
+# Ath að bankareikningsklasinn er sóttur úr skrá sem ég nefndi bankareikningurFile.py
+# Hún er vistuð í sömu möppu og þessi skrá
 from bankareikningurFile import Bankareikningur
 
 class Bankavidskipti:
@@ -15,9 +17,9 @@ class Bankavidskipti:
         self.str = str
 
     def Inn_reikning(self):
-        # virkni: leggur inn á eiginleikan reikning
+        # virkni: leggur inn á reikning (sem er eiginleiki hlutsins)
         # inntak: ekkert (nema hluturinn sjálfur)
-        # úttak: EKKERT
+        # úttak: ekkert
         while(True):
             try:
                 upphaed=int(input('Já sæll hvað viltu leggja inn? '))
@@ -41,6 +43,9 @@ class Bankavidskipti:
                 break
 
     def takaUt_reikning(self):
+        # virkni: tekur út af eiginleikanum reikningur
+        # inntak: ekkert (nema hluturinn sjálfur)
+        # úttak: ekkert
         while(True):
             try:
                 upphaed= int(input('Já sæll hvað viltu taka mikið út? '))
@@ -61,6 +66,9 @@ class Bankavidskipti:
                 break
     
     def saekjaStodu_reikning(self):
+        # Virkni: Sækir og birtir stöðu reikningsins (eiginleiki hlutsins)
+        # inntak: ekkert
+        # úttak: ekkert
         try: 
             stada = self.reikningur.saekja_stodu()
             print("Staða reikningsins er",stada,"kr.")
@@ -76,7 +84,7 @@ def main():
     print("Halóhaló velkomin í bankann minn")
     print("Hér þýðir I=Innlögn, U=Uttekt, S=Staða og H=Hætta")
     
-    adgerd = 'EINHVER STRENGUR sem er ekki "H"'
+    adgerd = 'EINHVER STRENGUR sem er ekki "H"' # Bara til þess að While-lykkjan keyri
     while adgerd!="H":
         adgerd = input("Hvaða aðgerð má bjóða þér? (I/U/S/H): ")
         if adgerd=="I":
